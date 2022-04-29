@@ -1,0 +1,2004 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     72167,       1996]
+NotebookOptionsPosition[     65040,       1880]
+NotebookOutlinePosition[     65691,       1902]
+CellTagsIndexPosition[     65648,       1899]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Practical-3",
+ FontWeight->"Bold",
+ FontVariations->{"Underline"->True}]], "Title",
+ CellChangeTimes->{{3.8526155736390967`*^9, 
+  3.852615580300339*^9}},ExpressionUUID->"b23b9dfa-647d-4d82-9d29-\
+ac09ca53a156"],
+
+Cell["\<\
+Akshay Kumar (204005)
+NM Practicals\
+\>", "Abstract",
+ CellChangeTimes->{{3.852615598960821*^9, 
+  3.8526156163494945`*^9}},ExpressionUUID->"693b6007-ef42-47cb-80da-\
+d5907f093c36"],
+
+Cell[CellGroupData[{
+
+Cell["Regula Falsi Method", "Subsection",
+ CellChangeTimes->{{3.859787900422578*^9, 3.859787906215625*^9}},
+ FontWeight->"Bold",ExpressionUUID->"aa591946-6f57-40e7-9f86-656c2b31877e"],
+
+Cell[CellGroupData[{
+
+Cell["Ques1. x^3-5x+1,   (0,1)", "Subsubsection",
+ CellChangeTimes->{{3.8526122055877514`*^9, 3.8526122067607107`*^9}, {
+  3.85261286816087*^9, 
+  3.8526128841209497`*^9}},ExpressionUUID->"bfab1c56-5b18-4ab5-b092-\
+a00bd39cc737"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RegulaFalsi", "[", 
+    RowBox[{"a0_", ",", " ", "b0_", ",", "m_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"N", "[", "a0", "]"}]}], ",", 
+       RowBox[{"b", "=", 
+        RowBox[{"N", "[", "b0", "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"c", "=", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"a", "*", 
+          RowBox[{"f", "[", "b", "]"}]}], "-", 
+         RowBox[{"b", "*", 
+          RowBox[{"f", "[", "a", "]"}]}]}], 
+        RowBox[{
+         RowBox[{"f", "[", "b", "]"}], "-", 
+         RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"k", "<", "m"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sign", "[", 
+             RowBox[{"f", "[", "b", "]"}], "]"}], "==", 
+            RowBox[{"Sign", "[", 
+             RowBox[{"f", "[", "c", "]"}], "]"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"b", "=", "c"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "=", "c"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"c", "=", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"a", "*", 
+             RowBox[{"f", "[", "b", "]"}]}], "-", 
+            RowBox[{"b", "*", 
+             RowBox[{"f", "[", "a", "]"}]}]}], 
+           RowBox[{
+            RowBox[{"f", "[", "b", "]"}], "-", 
+            RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"k", "=", 
+          RowBox[{"k", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{
+          "\"\<Value at \>\"", ",", " ", "k", ",", " ", 
+           "\"\<th iteration is = \>\"", ",", " ", 
+           RowBox[{"NumberForm", "[", 
+            RowBox[{"c", ",", "16"}], "]"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RegulaFalsi", "[", 
+   RowBox[{"0", ",", "1", ",", "10"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"x", "^", "3"}], "-", 
+    RowBox[{"5", "x"}], "+", "1"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8526119400236*^9, 3.852611976884859*^9}, {
+  3.852612088430113*^9, 3.8526121412957363`*^9}, {3.8526121869943514`*^9, 
+  3.8526121884725485`*^9}, {3.8526123452396493`*^9, 3.852612416866079*^9}, {
+  3.852612451884807*^9, 3.8526125248589077`*^9}, {3.8526125600093164`*^9, 
+  3.852612675883464*^9}, {3.8526127106968203`*^9, 3.8526127338150654`*^9}, {
+  3.8526127874049625`*^9, 3.8526128166129436`*^9}, {3.8526131912048717`*^9, 
+  3.8526132119555693`*^9}, {3.8526149678294015`*^9, 3.852614992732539*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"59c9a599-73a7-4b09-bf6f-69aba824a714"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.666666666666667\"\>",
+      ShowStringCharacters->False],
+     1.6666666666666665`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 1, "th iteration is = ", 
+   NumberForm[1.6666666666666665`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.8597879167652345`*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"3dacd819-2600-4917-8bec-78950b9c055f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.\"\>",
+      ShowStringCharacters->False],
+     1.9999999999999998`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 2, "th iteration is = ", 
+   NumberForm[1.9999999999999998`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916781027*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"b4cfaf18-7fda-44ab-965e-b3104bb59ed3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.142857142857143\"\>",
+      ShowStringCharacters->False],
+     2.142857142857143,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 3, "th iteration is = ", 
+   NumberForm[2.142857142857143, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916781027*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"4f027bcf-a11f-4fc6-9284-cbf33a113353"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.2\"\>",
+      ShowStringCharacters->False],
+     2.2,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 4, "th iteration is = ", 
+   NumberForm[2.2, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916781027*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"379db6a7-8c8c-43e7-86cf-32659dcdbe8d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.222222222222222\"\>",
+      ShowStringCharacters->False],
+     2.222222222222222,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 5, "th iteration is = ", 
+   NumberForm[2.222222222222222, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916781027*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"3c9598c2-98a8-4d0b-bf59-733cf8426955"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.23076923076923\"\>",
+      ShowStringCharacters->False],
+     2.2307692307692304`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 6, "th iteration is = ", 
+   NumberForm[2.2307692307692304`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916797352*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"243a2b7b-5229-4c12-94be-c4302235c8e7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.234042553191489\"\>",
+      ShowStringCharacters->False],
+     2.234042553191489,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 7, "th iteration is = ", 
+   NumberForm[2.234042553191489, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916797352*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"ec2eee52-6adb-4d75-b12f-71d50fe1c5a0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.235294117647059\"\>",
+      ShowStringCharacters->False],
+     2.235294117647059,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 8, "th iteration is = ", 
+   NumberForm[2.235294117647059, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916797352*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"8116bfdc-0724-45e0-8682-64573341d84b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.235772357723577\"\>",
+      ShowStringCharacters->False],
+     2.2357723577235773`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 9, "th iteration is = ", 
+   NumberForm[2.2357723577235773`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.859787916797352*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"b5fb62a7-708f-4969-85d8-c112b3f5963f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"2.235955056179775\"\>",
+      ShowStringCharacters->False],
+     2.235955056179775,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 10, "th iteration is = ", 
+   NumberForm[2.235955056179775, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.8526128198512206`*^9, 3.852612854675207*^9, 3.852613106054476*^9, 
+   3.8526132145688124`*^9, 3.8526132813025813`*^9, {3.8526150074397383`*^9, 
+   3.852615014190411*^9}, 3.8597879168132024`*^9},
+ CellLabel->
+  "During evaluation of \
+In[51]:=",ExpressionUUID->"cfcaaea8-c859-48e8-9676-5eded14a8e2f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ques2 Tan[\[Pi] x]-x-6", "Subsubsection",
+ CellChangeTimes->{{3.852613319362723*^9, 3.8526133203785057`*^9}, {
+  3.852613790428327*^9, 
+  3.8526137953856583`*^9}},ExpressionUUID->"f4fd52ff-4e5c-4e35-bccd-\
+b44d7e185f59"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"RegulaFalsi", "[", 
+      RowBox[{"a0_", ",", " ", "b0_", ",", "m_"}], "]"}], ":=", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"a", "=", 
+          RowBox[{"N", "[", "a0", "]"}]}], ",", 
+         RowBox[{"b", "=", 
+          RowBox[{"N", "[", "b0", "]"}]}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"c", "=", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"a", "*", 
+            RowBox[{"f", "[", "b", "]"}]}], "-", 
+           RowBox[{"b", "*", 
+            RowBox[{"f", "[", "a", "]"}]}]}], 
+          RowBox[{
+           RowBox[{"f", "[", "b", "]"}], "-", 
+           RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"k", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{
+          RowBox[{"k", "<", "m"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Sign", "[", 
+               RowBox[{"f", "[", "b", "]"}], "]"}], "==", 
+              RowBox[{"Sign", "[", 
+               RowBox[{"f", "[", "c", "]"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"b", "=", "c"}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"a", "=", "c"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"c", "=", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"a", "*", 
+               RowBox[{"f", "[", "b", "]"}]}], "-", 
+              RowBox[{"b", "*", 
+               RowBox[{"f", "[", "a", "]"}]}]}], 
+             RowBox[{
+              RowBox[{"f", "[", "b", "]"}], "-", 
+              RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"k", "=", 
+            RowBox[{"k", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"Print", "[", 
+            RowBox[{
+            "\"\<Value at \>\"", ",", " ", "k", ",", " ", 
+             "\"\<th iteration is = \>\"", ",", " ", 
+             RowBox[{"NumberForm", "[", 
+              RowBox[{"c", ",", "16"}], "]"}]}], "]"}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"RegulaFalsi", "[", 
+     RowBox[{"0.4", ",", "0.48", ",", "10"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "x_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Tan", "[", "\[Pi]x", "]"}], "-", "x", "-", "6"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.8526133039507475`*^9, 3.8526133655366297`*^9}, {
+  3.8526149328342032`*^9, 3.852614937459733*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"569b4dd8-0cef-42ee-a17a-583fc488b8cb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.202344500250745\"\>",
+      ShowStringCharacters->False],
+     0.20234450025074505`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 1, "th iteration is = ", 
+   NumberForm[0.20234450025074505`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.8597879168858953`*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"3369e90c-293c-4cc8-b638-63fe2293c164"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016408305573959\"\>",
+      ShowStringCharacters->False],
+     0.2016408305573959,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 2, "th iteration is = ", 
+   NumberForm[0.2016408305573959, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.8597879168858953`*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"9be3b435-2da5-47c1-808c-6c43101e4cf1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396776131559\"\>",
+      ShowStringCharacters->False],
+     0.2016396776131559,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 3, "th iteration is = ", 
+   NumberForm[0.2016396776131559, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.8597879168858953`*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"e949ebde-f48c-42e7-9c37-7b901457bd7d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757264971\"\>",
+      ShowStringCharacters->False],
+     0.20163967572649705`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 4, "th iteration is = ", 
+   NumberForm[0.20163967572649705`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916901518*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"8ecef3c9-901f-481d-9255-05231167a8da"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757234097\"\>",
+      ShowStringCharacters->False],
+     0.2016396757234097,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 5, "th iteration is = ", 
+   NumberForm[0.2016396757234097, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916901518*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"e2117c71-580e-493e-9ad8-89820a058b28"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757234047\"\>",
+      ShowStringCharacters->False],
+     0.2016396757234047,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 6, "th iteration is = ", 
+   NumberForm[0.2016396757234047, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916901518*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"b8478bef-eb1e-42f9-a901-dbcb413bc818"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757234046\"\>",
+      ShowStringCharacters->False],
+     0.20163967572340466`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 7, "th iteration is = ", 
+   NumberForm[0.20163967572340466`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916901518*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"1be50a72-7009-4329-8ddf-c8b7ad9a0485"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757234047\"\>",
+      ShowStringCharacters->False],
+     0.2016396757234047,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 8, "th iteration is = ", 
+   NumberForm[0.2016396757234047, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916901518*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"165a4aa2-254f-4b5f-a2b3-b0483f0b1034"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757234047\"\>",
+      ShowStringCharacters->False],
+     0.2016396757234047,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 9, "th iteration is = ", 
+   NumberForm[0.2016396757234047, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916919345*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"d327bc5d-0460-4197-9706-e1c5763596d7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"0.2016396757234047\"\>",
+      ShowStringCharacters->False],
+     0.2016396757234047,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 10, "th iteration is = ", 
+   NumberForm[0.2016396757234047, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8526133692099066`*^9, 3.8526149435564966`*^9, 
+  3.859787916919345*^9},
+ CellLabel->
+  "During evaluation of \
+In[55]:=",ExpressionUUID->"75beab44-9952-4776-bd51-d1eeea8bf159"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ques3 x^3+2x^2-3x-1", "Subsubsection",
+ CellChangeTimes->{{3.8526133924848585`*^9, 3.852613397585762*^9}, {
+   3.85261380780031*^9, 3.85261380948549*^9}, 
+   3.8526149068488293`*^9},ExpressionUUID->"a9c00155-4cb4-47c6-8988-\
+f1bb8a8c5a4e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"RegulaFalsi", "[", 
+      RowBox[{"a0_", ",", " ", "b0_", ",", "m_"}], "]"}], ":=", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"a", "=", 
+          RowBox[{"N", "[", "a0", "]"}]}], ",", 
+         RowBox[{"b", "=", 
+          RowBox[{"N", "[", "b0", "]"}]}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"c", "=", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"a", "*", 
+            RowBox[{"f", "[", "b", "]"}]}], "-", 
+           RowBox[{"b", "*", 
+            RowBox[{"f", "[", "a", "]"}]}]}], 
+          RowBox[{
+           RowBox[{"f", "[", "b", "]"}], "-", 
+           RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"k", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{
+          RowBox[{"k", "<", "m"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Sign", "[", 
+               RowBox[{"f", "[", "b", "]"}], "]"}], "==", 
+              RowBox[{"Sign", "[", 
+               RowBox[{"f", "[", "c", "]"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"b", "=", "c"}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"a", "=", "c"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"c", "=", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"a", "*", 
+               RowBox[{"f", "[", "b", "]"}]}], "-", 
+              RowBox[{"b", "*", 
+               RowBox[{"f", "[", "a", "]"}]}]}], 
+             RowBox[{
+              RowBox[{"f", "[", "b", "]"}], "-", 
+              RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"k", "=", 
+            RowBox[{"k", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"Print", "[", 
+            RowBox[{
+            "\"\<Value at \>\"", ",", " ", "k", ",", " ", 
+             "\"\<th iteration is = \>\"", ",", " ", 
+             RowBox[{"NumberForm", "[", 
+              RowBox[{"c", ",", "16"}], "]"}]}], "]"}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"RegulaFalsi", "[", 
+     RowBox[{
+      RowBox[{"-", "3"}], ",", 
+      RowBox[{"-", "2"}], ",", "10"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "x_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"x", "^", "3"}], "+", 
+      RowBox[{"2", 
+       RowBox[{"x", "^", "2"}]}], "-", 
+      RowBox[{"3", "x"}], "-", "1"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.852613409234865*^9, 3.852613439190425*^9}, {
+  3.852614885066614*^9, 3.852614889249691*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"1d5365f0-62a4-405b-ac13-8a3e7456fd0d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 1, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.8597879169548073`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"0516c8ad-d5eb-4687-ad32-11f3185caba4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 2, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.8597879169548073`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"2823b3a6-ee43-4715-b6bf-6b21e9f107c2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 3, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.8597879169709263`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"a47ab690-f3cc-48e0-b0e4-545b59ca7660"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 4, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.8597879169709263`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"db42aff4-8327-4706-ab39-2f3cdfb53b8f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 5, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.859787916986538*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"baf3fa60-fcb6-48e0-a84e-4bb4a41ba27b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 6, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.859787916986538*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"efb60c3f-7a9a-4fd2-9e75-bd1ef6a3f4c7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 7, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.859787916986538*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"ff50b562-5cf6-4428-b581-780c477cad5b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 8, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.859787916986538*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"bbff778d-2d94-48b3-affb-dd7bd36ee9e7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 9, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.859787916986538*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"29b44586-6fc4-4902-a52f-75dd90d8e767"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\<\"-1.\"\>",
+       ShowStringCharacters->False],
+      -1.,
+      AutoDelete->True], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"-3.\"\>",
+          ShowStringCharacters->False],
+         -3.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-4.\"\>",
+            ShowStringCharacters->False],
+           -4.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\<\"2.\"\>",
+          ShowStringCharacters->False],
+         2.,
+         AutoDelete->True], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["\<\"-3.\"\>",
+            ShowStringCharacters->False],
+           -3.,
+           AutoDelete->True], "+", 
+          RowBox[{"Tan", "[", "\[Pi]x", "]"}]}], ")"}]}]}], ")"}]}],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 10, "th iteration is = ", 
+   NumberForm[-((-3.) (-4. + Tan[$CellContext`\[Pi]x]) + 
+     2. (-3. + Tan[$CellContext`\[Pi]x])), 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.852613427404772*^9, 3.85261344333447*^9}, {
+   3.8526148923071184`*^9, 3.85261489580175*^9}, 3.859787917002348*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"c73a6a7b-3756-4631-a270-750fcbb6bb47"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ques4.  x^7-3,  (1, 2)", "Subsubsection",
+ CellChangeTimes->{{3.8526134520731297`*^9, 3.8526134531968994`*^9}, {
+  3.8526138203947196`*^9, 3.8526138210012527`*^9}, {3.8526147858730564`*^9, 
+  3.8526147983307705`*^9}},ExpressionUUID->"dea56b0d-4ef1-48b6-b65e-\
+294be0803fab"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"RegulaFalsi", "[", 
+      RowBox[{"a0_", ",", " ", "b0_", ",", "m_"}], "]"}], ":=", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"a", "=", 
+          RowBox[{"N", "[", "a0", "]"}]}], ",", 
+         RowBox[{"b", "=", 
+          RowBox[{"N", "[", "b0", "]"}]}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"c", "=", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"a", "*", 
+            RowBox[{"f", "[", "b", "]"}]}], "-", 
+           RowBox[{"b", "*", 
+            RowBox[{"f", "[", "a", "]"}]}]}], 
+          RowBox[{
+           RowBox[{"f", "[", "b", "]"}], "-", 
+           RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"k", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{
+          RowBox[{"k", "<", "m"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Sign", "[", 
+               RowBox[{"f", "[", "b", "]"}], "]"}], "==", 
+              RowBox[{"Sign", "[", 
+               RowBox[{"f", "[", "c", "]"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"b", "=", "c"}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"a", "=", "c"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"c", "=", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"a", "*", 
+               RowBox[{"f", "[", "b", "]"}]}], "-", 
+              RowBox[{"b", "*", 
+               RowBox[{"f", "[", "a", "]"}]}]}], 
+             RowBox[{
+              RowBox[{"f", "[", "b", "]"}], "-", 
+              RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"k", "=", 
+            RowBox[{"k", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"Print", "[", 
+            RowBox[{
+            "\"\<Value at \>\"", ",", " ", "k", ",", " ", 
+             "\"\<th iteration is = \>\"", ",", " ", 
+             RowBox[{"NumberForm", "[", 
+              RowBox[{"c", ",", "16"}], "]"}]}], "]"}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"RegulaFalsi", "[", 
+     RowBox[{"1", ",", "2", ",", "10"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "x_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"x", "^", "7"}], "-", "3"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.852613461504631*^9, 3.8526134733456235`*^9}, {
+   3.852613975508935*^9, 3.8526140315043488`*^9}, {3.852614585282732*^9, 
+   3.8526145880766373`*^9}, {3.852614772669344*^9, 3.8526147752161016`*^9}, 
+   3.8526148410660477`*^9},
+ CellLabel->"In[61]:=",ExpressionUUID->"2733ebac-821c-47f1-925e-943e09a14be7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.151743638077286\"\>",
+      ShowStringCharacters->False],
+     1.1517436380772859`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 1, "th iteration is = ", 
+   NumberForm[1.1517436380772859`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.8597879170210705`*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"2d5c173e-9416-4d4c-b214-964449a0e411"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.176840909982786\"\>",
+      ShowStringCharacters->False],
+     1.1768409099827861`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 2, "th iteration is = ", 
+   NumberForm[1.1768409099827861`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.859787917036707*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"c926ab69-7c65-46c5-8a45-3b53e4a2ff8b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.188627673293829\"\>",
+      ShowStringCharacters->False],
+     1.1886276732938286`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 3, "th iteration is = ", 
+   NumberForm[1.1886276732938286`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.859787917036707*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"2bcf2eb8-2044-41ad-b5ef-951808973d86"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.194078911293239\"\>",
+      ShowStringCharacters->False],
+     1.194078911293239,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 4, "th iteration is = ", 
+   NumberForm[1.194078911293239, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.859787917036707*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"4995333d-38c6-4e84-82dc-16934f529831"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.196582088205248\"\>",
+      ShowStringCharacters->False],
+     1.1965820882052478`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 5, "th iteration is = ", 
+   NumberForm[1.1965820882052478`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.8597879170523224`*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"a7cc36d3-f373-4f6f-9e98-1917590ba421"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.197727754386817\"\>",
+      ShowStringCharacters->False],
+     1.197727754386817,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 6, "th iteration is = ", 
+   NumberForm[1.197727754386817, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.8597879170523224`*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"ed543b19-34e8-4ce4-b27b-dab0529a8825"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.198251317792009\"\>",
+      ShowStringCharacters->False],
+     1.1982513177920089`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 7, "th iteration is = ", 
+   NumberForm[1.1982513177920089`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.8597879170523224`*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"fe623934-a820-46c5-a454-5ecbceb20deb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.198490418455614\"\>",
+      ShowStringCharacters->False],
+     1.1984904184556142`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 8, "th iteration is = ", 
+   NumberForm[1.1984904184556142`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.8597879170523224`*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"2c8b2c94-2291-41b0-801d-70dc8e3ab904"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.198599576406595\"\>",
+      ShowStringCharacters->False],
+     1.1985995764065946`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 9, "th iteration is = ", 
+   NumberForm[1.1985995764065946`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.8597879170523224`*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"22ac2cc9-018b-4b9f-87b2-557b41f1f8f3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.19864940371845\"\>",
+      ShowStringCharacters->False],
+     1.1986494037184503`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 10, "th iteration is = ", 
+   NumberForm[1.1986494037184503`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613475965655*^9, 3.852613978129531*^9, 
+  3.8526140124188943`*^9, 3.852614592387521*^9, 3.8526147798725986`*^9, 
+  3.8526148441154027`*^9, 3.859787917067946*^9},
+ CellLabel->
+  "During evaluation of \
+In[61]:=",ExpressionUUID->"410a2438-b333-44b0-a72a-8c2311f60b12"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Ques5.  ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", "x"}]], "-", "x"}], "=", "0"}]], "Input",
+  CellChangeTimes->{{3.8526135027853403`*^9, 3.852613520073471*^9}},
+  ExpressionUUID->"792d0bb6-decb-443a-8f04-26b0d2bc2867"],
+ ",   (0, 1)"
+}], "Subsubsection",
+ CellChangeTimes->{{3.85261348865539*^9, 3.8526134925566587`*^9}, {
+  3.85261383282836*^9, 3.852613833182522*^9}, {3.852614808410818*^9, 
+  3.852614819458276*^9}, {3.8526148660508823`*^9, 
+  3.8526148662830477`*^9}},ExpressionUUID->"3839a055-a7b3-4c80-90a9-\
+9467f082b60b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RegulaFalsi", "[", 
+    RowBox[{"a0_", ",", " ", "b0_", ",", "m_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"N", "[", "a0", "]"}]}], ",", 
+       RowBox[{"b", "=", 
+        RowBox[{"N", "[", "b0", "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"c", "=", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"a", "*", 
+          RowBox[{"f", "[", "b", "]"}]}], "-", 
+         RowBox[{"b", "*", 
+          RowBox[{"f", "[", "a", "]"}]}]}], 
+        RowBox[{
+         RowBox[{"f", "[", "b", "]"}], "-", 
+         RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"k", "<", "m"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sign", "[", 
+             RowBox[{"f", "[", "b", "]"}], "]"}], "==", 
+            RowBox[{"Sign", "[", 
+             RowBox[{"f", "[", "c", "]"}], "]"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"b", "=", "c"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "=", "c"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"c", "=", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"a", "*", 
+             RowBox[{"f", "[", "b", "]"}]}], "-", 
+            RowBox[{"b", "*", 
+             RowBox[{"f", "[", "a", "]"}]}]}], 
+           RowBox[{
+            RowBox[{"f", "[", "b", "]"}], "-", 
+            RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"k", "=", 
+          RowBox[{"k", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", 
+          RowBox[{
+          "\"\<Value at \>\"", ",", " ", "k", ",", " ", 
+           "\"\<th iteration is = \>\"", ",", " ", 
+           RowBox[{"NumberForm", "[", 
+            RowBox[{"c", ",", "16"}], "]"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RegulaFalsi", "[", 
+   RowBox[{"0", ",", "1", ",", "10"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", "x"}]], "-", "x"}], "=", "0"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8526135027853403`*^9, 3.852613520073471*^9}, {
+   3.8526138377553744`*^9, 3.852613838042797*^9}, 3.8526139617331085`*^9, {
+   3.8526148523778467`*^9, 3.85261485642192*^9}},
+ CellLabel->"In[64]:=",ExpressionUUID->"c3b2a266-9a80-4271-b18f-5ded12f77b43"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.001829826166514\"\>",
+      ShowStringCharacters->False],
+     1.0018298261665142`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 1, "th iteration is = ", 
+   NumberForm[1.0018298261665142`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917099511*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"5c090de7-8157-4e34-aa3c-6f3f2a5c4fc1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.003646216233007\"\>",
+      ShowStringCharacters->False],
+     1.003646216233007,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 2, "th iteration is = ", 
+   NumberForm[1.003646216233007, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917099511*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"13515fd5-1964-44b5-bcbf-b52b19031b72"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.005449161961029\"\>",
+      ShowStringCharacters->False],
+     1.0054491619610286`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 3, "th iteration is = ", 
+   NumberForm[1.0054491619610286`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917115137*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"a4612b4b-a66d-498f-8824-160621ad5690"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.007238656730608\"\>",
+      ShowStringCharacters->False],
+     1.0072386567306078`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 4, "th iteration is = ", 
+   NumberForm[1.0072386567306078`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917115137*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"94cb0000-a8cd-4e82-96b4-0d9b00ae3bb1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.009014695544169\"\>",
+      ShowStringCharacters->False],
+     1.0090146955441686`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 5, "th iteration is = ", 
+   NumberForm[1.0090146955441686`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917115137*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"7685755e-c0f4-4ec4-b3b5-41b605ea88b3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.010777275029574\"\>",
+      ShowStringCharacters->False],
+     1.0107772750295738`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 6, "th iteration is = ", 
+   NumberForm[1.0107772750295738`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917115137*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"27540ce1-6b1f-4142-a6d5-87eb3c899b53"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.012526393442295\"\>",
+      ShowStringCharacters->False],
+     1.012526393442295,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 7, "th iteration is = ", 
+   NumberForm[1.012526393442295, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917115137*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"448b7bb2-2d30-4be2-b6ac-b8da57a4c96d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.014262050666711\"\>",
+      ShowStringCharacters->False],
+     1.0142620506667106`,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 8, "th iteration is = ", 
+   NumberForm[1.0142620506667106`, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917131005*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"98a536eb-c45e-4444-9356-5da2897fa41a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.015984248216533\"\>",
+      ShowStringCharacters->False],
+     1.015984248216533,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 9, "th iteration is = ", 
+   NumberForm[1.015984248216533, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917131005*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"12f5c0e3-7cde-4851-b0a1-59fc9770ef2e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Value at \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"th iteration is = \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    InterpretationBox[
+     StyleBox["\<\"1.01769298923437\"\>",
+      ShowStringCharacters->False],
+     1.01769298923437,
+     AutoDelete->True],
+    NumberForm[#, 16]& ]}],
+  SequenceForm["Value at ", 10, "th iteration is = ", 
+   NumberForm[1.01769298923437, 16]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.852613520858295*^9, 3.8526139665845428`*^9, 
+  3.852614859441757*^9, 3.859787917131005*^9},
+ CellLabel->
+  "During evaluation of \
+In[64]:=",ExpressionUUID->"8be36a4b-96eb-4f9a-8323-79dfa1adca54"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1141.2, 574.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.2755905511812, 841.8897637795276}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (June 19, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"65a2d38c-eb01-4eed-969f-86ac20514537"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 235, 5, 96, "Title",ExpressionUUID->"b23b9dfa-647d-4d82-9d29-ac09ca53a156"],
+Cell[818, 29, 191, 6, 83, "Abstract",ExpressionUUID->"693b6007-ef42-47cb-80da-d5907f093c36"],
+Cell[CellGroupData[{
+Cell[1034, 39, 183, 2, 34, "Subsection",ExpressionUUID->"aa591946-6f57-40e7-9f86-656c2b31877e"],
+Cell[CellGroupData[{
+Cell[1242, 45, 229, 4, 33, "Subsubsection",ExpressionUUID->"bfab1c56-5b18-4ab5-b092-a00bd39cc737"],
+Cell[CellGroupData[{
+Cell[1496, 53, 3220, 79, 423, "Input",ExpressionUUID->"59c9a599-73a7-4b09-bf6f-69aba824a714"],
+Cell[CellGroupData[{
+Cell[4741, 136, 807, 20, 22, "Print",ExpressionUUID->"3dacd819-2600-4917-8bec-78950b9c055f"],
+Cell[5551, 158, 790, 20, 22, "Print",ExpressionUUID->"b4cfaf18-7fda-44ab-965e-b3104bb59ed3"],
+Cell[6344, 180, 801, 20, 22, "Print",ExpressionUUID->"4f027bcf-a11f-4fc6-9284-cbf33a113353"],
+Cell[7148, 202, 759, 20, 22, "Print",ExpressionUUID->"379db6a7-8c8c-43e7-86cf-32659dcdbe8d"],
+Cell[7910, 224, 801, 20, 22, "Print",ExpressionUUID->"3c9598c2-98a8-4d0b-bf59-733cf8426955"],
+Cell[8714, 246, 804, 20, 22, "Print",ExpressionUUID->"243a2b7b-5229-4c12-94be-c4302235c8e7"],
+Cell[9521, 268, 801, 20, 22, "Print",ExpressionUUID->"ec2eee52-6adb-4d75-b12f-71d50fe1c5a0"],
+Cell[10325, 290, 801, 20, 22, "Print",ExpressionUUID->"8116bfdc-0724-45e0-8682-64573341d84b"],
+Cell[11129, 312, 805, 20, 22, "Print",ExpressionUUID->"b5fb62a7-708f-4969-85d8-c112b3f5963f"],
+Cell[11937, 334, 805, 20, 22, "Print",ExpressionUUID->"cfcaaea8-c859-48e8-9676-5eded14a8e2f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12803, 361, 226, 4, 33, "Subsubsection",ExpressionUUID->"f4fd52ff-4e5c-4e35-bccd-b44d7e185f59"],
+Cell[CellGroupData[{
+Cell[13054, 369, 2967, 77, 442, "Input",ExpressionUUID->"569b4dd8-0cef-42ee-a17a-583fc488b8cb"],
+Cell[CellGroupData[{
+Cell[16046, 450, 685, 18, 22, "Print",ExpressionUUID->"3369e90c-293c-4cc8-b638-63fe2293c164"],
+Cell[16734, 470, 682, 18, 22, "Print",ExpressionUUID->"9be3b435-2da5-47c1-808c-6c43101e4cf1"],
+Cell[17419, 490, 682, 18, 22, "Print",ExpressionUUID->"e949ebde-f48c-42e7-9c37-7b901457bd7d"],
+Cell[18104, 510, 684, 18, 22, "Print",ExpressionUUID->"8ecef3c9-901f-481d-9255-05231167a8da"],
+Cell[18791, 530, 680, 18, 22, "Print",ExpressionUUID->"e2117c71-580e-493e-9ad8-89820a058b28"],
+Cell[19474, 550, 680, 18, 22, "Print",ExpressionUUID->"b8478bef-eb1e-42f9-a901-dbcb413bc818"],
+Cell[20157, 570, 684, 18, 22, "Print",ExpressionUUID->"1be50a72-7009-4329-8ddf-c8b7ad9a0485"],
+Cell[20844, 590, 680, 18, 22, "Print",ExpressionUUID->"165a4aa2-254f-4b5f-a2b3-b0483f0b1034"],
+Cell[21527, 610, 680, 18, 22, "Print",ExpressionUUID->"d327bc5d-0460-4197-9706-e1c5763596d7"],
+Cell[22210, 630, 682, 18, 22, "Print",ExpressionUUID->"75beab44-9952-4776-bd51-d1eeea8bf159"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22953, 655, 245, 4, 33, "Subsubsection",ExpressionUUID->"a9c00155-4cb4-47c6-8988-f1bb8a8c5a4e"],
+Cell[CellGroupData[{
+Cell[23223, 663, 3061, 80, 423, "Input",ExpressionUUID->"1d5365f0-62a4-405b-ac13-8a3e7456fd0d"],
+Cell[CellGroupData[{
+Cell[26309, 747, 1677, 50, 22, "Print",ExpressionUUID->"0516c8ad-d5eb-4687-ad32-11f3185caba4"],
+Cell[27989, 799, 1677, 50, 22, "Print",ExpressionUUID->"2823b3a6-ee43-4715-b6bf-6b21e9f107c2"],
+Cell[29669, 851, 1677, 50, 22, "Print",ExpressionUUID->"a47ab690-f3cc-48e0-b0e4-545b59ca7660"],
+Cell[31349, 903, 1677, 50, 22, "Print",ExpressionUUID->"db42aff4-8327-4706-ab39-2f3cdfb53b8f"],
+Cell[33029, 955, 1675, 50, 22, "Print",ExpressionUUID->"baf3fa60-fcb6-48e0-a84e-4bb4a41ba27b"],
+Cell[34707, 1007, 1675, 50, 22, "Print",ExpressionUUID->"efb60c3f-7a9a-4fd2-9e75-bd1ef6a3f4c7"],
+Cell[36385, 1059, 1675, 50, 22, "Print",ExpressionUUID->"ff50b562-5cf6-4428-b581-780c477cad5b"],
+Cell[38063, 1111, 1675, 50, 22, "Print",ExpressionUUID->"bbff778d-2d94-48b3-affb-dd7bd36ee9e7"],
+Cell[39741, 1163, 1675, 50, 22, "Print",ExpressionUUID->"29b44586-6fc4-4902-a52f-75dd90d8e767"],
+Cell[41419, 1215, 1677, 50, 22, "Print",ExpressionUUID->"c73a6a7b-3756-4631-a270-750fcbb6bb47"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43157, 1272, 280, 4, 33, "Subsubsection",ExpressionUUID->"dea56b0d-4ef1-48b6-b65e-294be0803fab"],
+Cell[CellGroupData[{
+Cell[43462, 1280, 3058, 77, 423, "Input",ExpressionUUID->"2733ebac-821c-47f1-925e-943e09a14be7"],
+Cell[CellGroupData[{
+Cell[46545, 1361, 776, 19, 22, "Print",ExpressionUUID->"2d5c173e-9416-4d4c-b214-964449a0e411"],
+Cell[47324, 1382, 774, 19, 22, "Print",ExpressionUUID->"c926ab69-7c65-46c5-8a45-3b53e4a2ff8b"],
+Cell[48101, 1403, 774, 19, 22, "Print",ExpressionUUID->"2bcf2eb8-2044-41ad-b5ef-951808973d86"],
+Cell[48878, 1424, 770, 19, 22, "Print",ExpressionUUID->"4995333d-38c6-4e84-82dc-16934f529831"],
+Cell[49651, 1445, 776, 19, 22, "Print",ExpressionUUID->"a7cc36d3-f373-4f6f-9e98-1917590ba421"],
+Cell[50430, 1466, 772, 19, 22, "Print",ExpressionUUID->"ed543b19-34e8-4ce4-b27b-dab0529a8825"],
+Cell[51205, 1487, 776, 19, 22, "Print",ExpressionUUID->"fe623934-a820-46c5-a454-5ecbceb20deb"],
+Cell[51984, 1508, 776, 19, 22, "Print",ExpressionUUID->"2c8b2c94-2291-41b0-801d-70dc8e3ab904"],
+Cell[52763, 1529, 776, 19, 22, "Print",ExpressionUUID->"22ac2cc9-018b-4b9f-87b2-557b41f1f8f3"],
+Cell[53542, 1550, 775, 19, 22, "Print",ExpressionUUID->"410a2438-b333-44b0-a72a-8c2311f60b12"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54378, 1576, 602, 15, 34, "Subsubsection",ExpressionUUID->"3839a055-a7b3-4c80-90a9-9467f082b60b"],
+Cell[CellGroupData[{
+Cell[55005, 1595, 2926, 76, 423, "Input",ExpressionUUID->"c3b2a266-9a80-4271-b18f-5ded12f77b43"],
+Cell[CellGroupData[{
+Cell[57956, 1675, 701, 18, 22, "Print",ExpressionUUID->"5c090de7-8157-4e34-aa3c-6f3f2a5c4fc1"],
+Cell[58660, 1695, 697, 18, 22, "Print",ExpressionUUID->"13515fd5-1964-44b5-bcbf-b52b19031b72"],
+Cell[59360, 1715, 701, 18, 22, "Print",ExpressionUUID->"a4612b4b-a66d-498f-8824-160621ad5690"],
+Cell[60064, 1735, 701, 18, 22, "Print",ExpressionUUID->"94cb0000-a8cd-4e82-96b4-0d9b00ae3bb1"],
+Cell[60768, 1755, 701, 18, 22, "Print",ExpressionUUID->"7685755e-c0f4-4ec4-b3b5-41b605ea88b3"],
+Cell[61472, 1775, 701, 18, 22, "Print",ExpressionUUID->"27540ce1-6b1f-4142-a6d5-87eb3c899b53"],
+Cell[62176, 1795, 697, 18, 22, "Print",ExpressionUUID->"448b7bb2-2d30-4be2-b6ac-b8da57a4c96d"],
+Cell[62876, 1815, 701, 18, 22, "Print",ExpressionUUID->"98a536eb-c45e-4444-9356-5da2897fa41a"],
+Cell[63580, 1835, 697, 18, 22, "Print",ExpressionUUID->"12f5c0e3-7cde-4851-b0a1-59fc9770ef2e"],
+Cell[64280, 1855, 696, 18, 22, "Print",ExpressionUUID->"8be36a4b-96eb-4f9a-8323-79dfa1adca54"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
